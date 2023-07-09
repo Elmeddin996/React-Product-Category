@@ -1,0 +1,44 @@
+.App {
+  text-align: center;
+}
+
+.header{
+width: 100%;
+height: 80px;
+font-size: 40px;
+background-color: aqua;
+}
+
+.page-cont{
+  display: flex;
+}
+
+.card{
+  margin: 10px;
+}
+
+.card img{
+width: 200px;
+height: 250px;
+}
+
+.col-lg-10{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.links{
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+
+}
+
+.category-cont{
+background-color: aqua;
+  margin: 20px 0;
+}
+
+.category-cont:hover{
+  background-color: red;
+}
