@@ -1,25 +1,23 @@
 import React, { useEffect, useState } from "react";
 import Product from "./Product";
-
+import axios from 'axios';
 const Category = () => {
   const [category, setCategory] = useState([]);
   const [products, setProducts] = useState([]);
   const [item, setItem]=useState([]);
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((response) => response.json())
-      .then((data) => {
-        setProducts(data)
-        setItem(data)
+    axios.get("https://fakestoreapi.com/products")
+      .then((res) => {
+        setProducts(res.data)
+        setItem(res.data)
       })
       .catch((error) => console.log(error));
   },[]);
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products/categories")
-      .then((response) => response.json())
-      .then((data) => setCategory(data))
+    axios.get("https://fakestoreapi.com/products/categories")
+      .then((res) => setCategory(res.data))
       .catch((error) => console.log(error));
   }, []);
 
@@ -30,21 +28,19 @@ const Category = () => {
 
 const MouseHover=(e)=>{
   e.preventDefault()
-  fetch(`https://fakestoreapi.com/products/category/${e.target.innerHTML}`)
-      .then((response) => response.json())
-      .then((data) => {
-        setProducts(data)
-        setItem(data)})
+  axios.get(`https://fakestoreapi.com/products/category/${e.target.innerHTML}`)
+      .then((res) => {
+        setProducts(res.data)
+        setItem(res.data)})
       .catch((error) => console.log(error));
 }
 
 const MouseLeave=(e)=>{
   e.preventDefault()
-  fetch("https://fakestoreapi.com/products")
-      .then((response) => response.json())
-      .then((data) => {
-        setProducts(data)
-        setItem(data)})
+  axios.get("https://fakestoreapi.com/products")
+      .then((res) => {
+        setProducts(res.data)
+        setItem(res.data)})
       .catch((error) => console.log(error));
 }
 

@@ -42,3 +42,14 @@ background-color: aqua;
 .category-cont:hover{
   background-color: red;
 }
+
+.details img{
+  width: 350px;
+  
+}
+
+.back-icon__elem{
+  text-decoration: none;
+  color: rgb(172, 8, 8);
+  border: 1px red solid;
+}
